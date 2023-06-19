@@ -1,9 +1,10 @@
 import React from 'react';
+import '../styles/footer.css';
 
 const Footer = () => {
     return (
-        <div>
-            <h1>Test Footer</h1>
+        <div className='contact_container'>
+            
         </div>
     );
 };

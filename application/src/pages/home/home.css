@@ -5,3 +5,7 @@ body{
     max-height: 1024px;
     margin: auto;
 }
+.home_container{
+    width: 100%;
+    height: 100%;
+}
