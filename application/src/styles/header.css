@@ -1,0 +1,19 @@
+.header_container {
+    width: 95%;
+    height: 20%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.title_container{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.show-menu{
+    right: 0;
+}
