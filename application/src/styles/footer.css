@@ -1,0 +1,55 @@
+.footer_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 95%;
+    height: 20%;
+    background-color: grey;
+    border-radius: 25px;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+.form_container{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+.contact_group{
+    width: 100%;
+    height: 100%;
+}
+.signature_container{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact_btn{
+    padding: 2px;
+    margin-top: 10px;
+    width: 40%;
+    background-color: brown;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.contact_input{
+    padding: 5px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+}
+.textarea_input{
+    width: 66%;
+    height: 80px;
+    margin-left: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+
+}

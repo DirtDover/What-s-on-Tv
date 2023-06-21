@@ -1,22 +1,17 @@
-const navMenu= document.getElementById('nav-menu'),
-      navToggle= document.getElementById('nav-toggle'),
-      navClose= document.getElementById('nav-close')
+const sendEmail = (e) =>{
+    e.preventDefault()
+    emailjs.sendForm('service_hunbebf','template_m1mk4mq', '#contact-form', 'HcPs1MeekaHisKKK2')
+      .then(()=>{
+        contactMessage.textContent = 'Message envoyé !'
 
-if(navToggle){
-    navToggle.addEventListener('click',()=>{
-        navMenu.classList.add('show-menu')
-    })
+        setTimeout(()=>{
+            contactMessage.textContent=''
+        },3000)
+
+        contactForm.reset()
+      }, () =>{
+        contactMessage.textContent = 'Message non envoyé (service error)'
+      })
 }
 
-if(navClose){
-    navClose.addEventListener('click', ()=>{
-        navMenu.classList.remove('show-menu')
-    })
-}
-
-const navLink = document.querySelectorAll('.nav__link')
-const linkAction = () =>{
-    const navMenu = document.getElementById('nav-menu')
-    navMenu.classList.remove('show-menu')
-}
-navLink.forEach(e=> e.addEventListener('click', linkAction))
+contactForm.addEventListener('submit', sendEmail)

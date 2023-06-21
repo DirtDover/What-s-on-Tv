@@ -1,12 +1,12 @@
 import React from 'react';
-import '../a propos/apropos.css'
+import '../contact/contact.css'
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import Footer from '../../components/Footer';
 
-const apropos = () => {
+const contact = () => {
     return (
-        <div className='apropos_container'>
+        <div className='contact_container'>
             <Header />
             <Banner />
             <Footer />
@@ -14,4 +14,4 @@ const apropos = () => {
     );
 };
 
-export default apropos;
+export default contact;

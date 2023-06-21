@@ -1,12 +1,12 @@
 import React from 'react';
-import '../a propos/apropos.css'
+import '../erreur/erreur.css'
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import Footer from '../../components/Footer';
 
-const apropos = () => {
+const erreur = () => {
     return (
-        <div className='apropos_container'>
+        <div className='erreur_container'>
             <Header />
             <Banner />
             <Footer />
@@ -14,4 +14,4 @@ const apropos = () => {
     );
 };
 
-export default apropos;
+export default erreur;
