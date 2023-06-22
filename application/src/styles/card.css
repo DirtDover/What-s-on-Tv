@@ -8,6 +8,7 @@
     border: 1px solid red;
     background: linear-gradient(brown, #9198e5);
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .title_card{
