@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../home/home.css"
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
+import Card from '../../components/Cardcategories';
+import Card2 from '../../components/Cardacteur';
 
 const auth = {
     method: 'GET',
@@ -19,20 +21,37 @@ const auth = {
 
     const Home = () => {
 
-        const [tag, setTag] = useState([],[]);
-        const Tags = {
-            method: 'GET',
-            headers: {
-              accept: 'application/json',
-              Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYjkxMjMzZmI0NTk5N2ExZTIxOTBmMzcwYTE2YTMwMiIsInN1YiI6IjY0OTAxNTJmMmY4ZDA5MDBlMzg2ODIzMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Z_pt-qopvTk-L1prSbBKzlGjyL8Gyq78YDMeASXUKvU'
-            }
-          };
-          
-          fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', Tags)
+        const [tag, setTag] = useState([]);
+        const [recent, setRecent] = useState([]);
+        const [people, setPeople] = useState([]);
+        const [toprated, setToprated] = useState([]);
+        
+          useEffect(()=>{
+            fetch('https://api.themoviedb.org/3/genre/movie/list?language=en')
             .then(response => response.json())
             .then(data => setTag(data.genres))
             .then(console.log(tag))
             .catch(err => console.error(err));
+
+            fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', auth)
+            .then(response => response.json())
+            .then(data => setRecent(data.results))
+            .then(console.log(recent))
+            .catch(err => console.error(err));
+
+            fetch('https://api.themoviedb.org/3/trending/person/day?language=en-US', auth)
+            .then(response => response.json())
+            .then(data => setPeople(data.results))
+            .then(console.log(people))
+            .catch(err => console.error(err));
+
+            fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', auth)
+            .then(response => response.json())
+            .then(data => setToprated(data.results))
+            .then(console.log(toprated))
+            .catch(err => console.error(err));
+          },[])
+          
 
     return (
 
@@ -43,16 +62,24 @@ const auth = {
             <Banner />
             <main className='main_container'>
                 <div className="nouveaute_container">
-                    <h1>Test</h1>
+                {recent.map((recents)=> {
+                       return <p>{recents.original_title}</p>;
+                    })}
                 </div>
                 <div className="tags_container">
-                <h1>Test</h1>
+                {tag.map((tags)=> (
+                       <Card key={tags.id} id={tags.id} title={tags.name}/>
+                    ))}
                 </div>
                 <div className="acteur_container">
-                <h1>TEst</h1>
+                {people.map((peoples)=> (
+                       <Card2 key={peoples.id} id={peoples.id} title={peoples.name} cover={peoples.profile_path}/>
+                    ))}
                 </div>
-                <div className="real_container">
-                <h1>TEst</h1>
+                <div className="top_container">
+                {toprated.map((toprateds)=> {
+                       return <p>{toprateds.title}</p>;
+                    })}
                 </div>
             </main>
             <Footer />
@@ -61,3 +88,4 @@ const auth = {
 };
 
 export default Home;
+

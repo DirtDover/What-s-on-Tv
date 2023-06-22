@@ -22,8 +22,8 @@ body{
 .nouveaute_container,
 .tags_container,
 .acteur_container,
-.real_container{
-    height: 25%;
+.top_container{
+    height: 30%;
     width: 100%;
     display: flex;
     flex-direction: row;
