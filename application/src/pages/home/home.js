@@ -3,8 +3,8 @@ import "../home/home.css"
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
-import Card from '../../components/Cardcategories';
-import Card2 from '../../components/Cardacteur';
+import Card from '../../components/Card';
+
 
 const auth = {
     method: 'GET',
@@ -62,9 +62,9 @@ const auth = {
             <Banner />
             <main className='main_container'>
                 <div className="nouveaute_container">
-                {recent.map((recents)=> {
-                       return <p>{recents.original_title}</p>;
-                    })}
+                {recent.map((recents)=> (
+                       <Card key={recents.id} id={recents.id} title={recents.title}/>
+                    ))}
                 </div>
                 <div className="tags_container">
                 {tag.map((tags)=> (
@@ -73,13 +73,13 @@ const auth = {
                 </div>
                 <div className="acteur_container">
                 {people.map((peoples)=> (
-                       <Card2 key={peoples.id} id={peoples.id} title={peoples.name} cover={peoples.profile_path}/>
+                       <Card key={peoples.id} id={peoples.id} title={peoples.name}/>
                     ))}
                 </div>
                 <div className="top_container">
-                {toprated.map((toprateds)=> {
-                       return <p>{toprateds.title}</p>;
-                    })}
+                {toprated.map((toprateds)=> (
+                       <Card key={toprateds.id} id={toprateds.id} title={toprateds.title}/>
+                    ))}
                 </div>
             </main>
             <Footer />
