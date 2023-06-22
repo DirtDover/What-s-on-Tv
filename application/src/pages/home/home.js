@@ -21,16 +21,16 @@ const auth = {
 
     const Home = () => {
 
-        const [tag, setTag] = useState([]);
+        const [populaire, setPopulaire] = useState([]);
         const [recent, setRecent] = useState([]);
         const [people, setPeople] = useState([]);
         const [toprated, setToprated] = useState([]);
         
           useEffect(()=>{
-            fetch('https://api.themoviedb.org/3/genre/movie/list?language=en')
+            fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', auth)
             .then(response => response.json())
-            .then(data => setTag(data.genres))
-            .then(console.log(tag))
+            .then(data => setPopulaire(data.results))
+            .then(console.log(populaire))
             .catch(err => console.error(err));
 
             fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', auth)
@@ -55,29 +55,27 @@ const auth = {
 
     return (
 
-    
-
         <div className='home_container'>
             <Header />
             <Banner />
             <main className='main_container'>
                 <div className="nouveaute_container">
-                {recent.map((recents)=> (
+                {recent.slice(0,7).map((recents)=> (
                        <Card key={recents.id} id={recents.id} title={recents.title}/>
                     ))}
                 </div>
-                <div className="tags_container">
-                {tag.map((tags)=> (
-                       <Card key={tags.id} id={tags.id} title={tags.name}/>
+                <div className="populaire_container">
+                {populaire.slice(0,7).map((populaires)=> (
+                       <Card key={populaires.id} id={populaires.id} title={populaires.title}/>
                     ))}
                 </div>
                 <div className="acteur_container">
-                {people.map((peoples)=> (
+                {people.slice(0,7).map((peoples)=> (
                        <Card key={peoples.id} id={peoples.id} title={peoples.name}/>
                     ))}
                 </div>
                 <div className="top_container">
-                {toprated.map((toprateds)=> (
+                {toprated.slice(0,7).map((toprateds)=> (
                        <Card key={toprateds.id} id={toprateds.id} title={toprateds.title}/>
                     ))}
                 </div>
