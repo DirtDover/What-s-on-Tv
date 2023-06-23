@@ -60,21 +60,25 @@ const auth = {
             <Banner />
             <main className='main_container'>
                 <div className="nouveaute_container">
+                <h1 className="nouveaute_title">A l'affiche</h1>
                 {recent.slice(0,7).map((recents)=> (
                        <Card key={recents.id} id={recents.id} title={recents.title}/>
                     ))}
                 </div>
                 <div className="populaire_container">
+                  <h1 className="populaire_title">Les plus populaires</h1>
                 {populaire.slice(0,7).map((populaires)=> (
                        <Card key={populaires.id} id={populaires.id} title={populaires.title}/>
                     ))}
                 </div>
                 <div className="acteur_container">
+                  <h1 className="acteur_title">Acteurs les plus populaires</h1>
                 {people.slice(0,7).map((peoples)=> (
                        <Card key={peoples.id} id={peoples.id} title={peoples.name}/>
                     ))}
                 </div>
                 <div className="top_container">
+                  <h1 className="top_title">Films les mieux notés</h1>
                 {toprated.slice(0,7).map((toprateds)=> (
                        <Card key={toprateds.id} id={toprateds.id} title={toprateds.title}/>
                     ))}
