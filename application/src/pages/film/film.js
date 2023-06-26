@@ -3,7 +3,7 @@ import '../film/film.css'
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import Footer from '../../components/Footer';
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 
 const auth = {
     method: 'GET',
@@ -22,25 +22,37 @@ const auth = {
     const [populaires, setPopulaires] = useState([]);
     const idFilm = useParams().id;
     
-    useEffect(()=>{
-     fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', auth)
-            .then(response => response.json())
-            .then(data => setPopulaires(data.results))
-            .then(console.log(populaires))
-            .catch(err => console.error(err));
+    const getFilm = async () => {
+      
+      const reponse = await fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', auth)
+      .then(response => response.json())
+      .then(data => setPopulaires(data.results))
+      .then(console.log(populaires))
+      .catch(err => console.error(err));
+  
+    }
 
+    useEffect(()=>{
+     getFilm();
         },[])
     
         const currentFilm = populaires.filter(data => data.id ==idFilm) 
-    
-    console.log(currentFilm)
+        const infos = currentFilm[0]
+        const baseUrl = 'https://image.tmdb.org/t/p/original'
+        const imagePath = `${infos && infos.poster_path}`
+        const imgUrl = `${baseUrl}/${imagePath}`
+        
+        
     
      return (
         <div>
             <Header />
             <Banner />
-            <h1>{currentFilm.title}</h1>
-            <h2>{currentFilm.overview}</h2>
+            <img  src={imgUrl} alt={infos && infos.title}/>
+            <h1>{infos && infos.title}</h1>
+            <h2> Résumé : <br/>{infos && infos.overview}</h2>
+            <h2>{infos && infos.vote_average}/10 sur {infos && infos.vote_count} votants </h2>
+            <h2>Date de sortie : {infos && infos.release_date}</h2>
             <Footer />
         </div>
     );
