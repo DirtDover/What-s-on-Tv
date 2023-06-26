@@ -12,7 +12,7 @@ body{
 
 .main_container{
     width: 95%;
-    height: 70%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -24,7 +24,7 @@ body{
 .populaire_container,
 .acteur_container,
 .top_container{
-    height: 40%;
+    height: 23%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -32,6 +32,6 @@ body{
     align-items: center;
     overflow: auto;
     border-bottom: 2px dotted black;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
