@@ -6,6 +6,8 @@ import Apropos from './pages/a propos/apropos';
 import Contact from './pages/contact/contact';
 import Erreur from './pages/erreur/erreur';
 import Film from './pages/film/film';
+import Acteur from './pages/acteurs/acteur'
+
 
 
 const Router = () => {
@@ -17,7 +19,8 @@ const Router = () => {
                <Route path='/apropos' element={<Apropos />}></Route>
                <Route path='/contact' element={<Contact />}></Route>
                <Route path='*' element={<Erreur />}></Route>
-               <Route path='/:id' element={<Film />}></Route>
+               <Route path='/film/:id' element={<Film />}></Route>
+               <Route path='/acteur/:id' element={<Acteur />}></Route>
 
             </Routes>
         </BrowserRouter>

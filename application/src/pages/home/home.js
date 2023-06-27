@@ -4,6 +4,7 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import Card from '../../components/Card';
+import CardActeur from '../../components/CardActeur';
 
 
 const auth = {
@@ -74,7 +75,7 @@ const auth = {
                 <div className="acteur_container">
                   <h1 className="acteur_title">Acteurs les plus populaires</h1>
                 {people.slice(0,7).map((peoples)=> (
-                       <Card key={peoples.id} id={peoples.id} title={peoples.name} cover={peoples.profile_path}/>
+                       <CardActeur key={peoples.id} id={peoples.id} title={peoples.name} cover={peoples.profile_path}/>
                     ))}
                 </div>
                 <div className="top_container">

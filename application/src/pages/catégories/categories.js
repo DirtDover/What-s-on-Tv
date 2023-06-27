@@ -3,7 +3,7 @@ import '../catégories/categories.css'
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
-import Card from '../../components/Card';
+import CardCategorie from '../../components/CardCategorie';
 
 const Categories = () => {
 
@@ -39,7 +39,7 @@ const Categories = () => {
             <main className='main_container_categories'>
             <div className="categorie_container">
                 {tag.map((tags)=> (
-                       <Card key={tags.id} id={tags.id} title={tags.name}/>
+                       <CardCategorie key={tags.id} id={tags.id} title={tags.name}/>
                     ))}
             </div>        
             </main>
