@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-around;
     margin-top: 50px;
-    background-color: darkgrey;
+    background: linear-gradient(109.6deg, rgb(245, 239, 249) 30.1%, rgb(207, 211, 236) 100.2%);
     color: black;
     border-radius: 25px;
 }

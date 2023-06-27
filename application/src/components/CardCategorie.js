@@ -10,8 +10,8 @@ const CardCategorie = ({id, title, name, cover}) => {
         const imgUrl = `${baseUrl}/${imagePath}`
     
         return (
-        <Link to={`/categories/${id}`} className='card' key={id}>
-            <h2 className='title_card'>{title}</h2>
+        <Link to={`/categories/${id}`} className='card_categorie' key={id}>
+            <h2 className='title_card_categorie'>{title}</h2>
         </Link>
     );
 };

@@ -38,21 +38,24 @@ const auth = {
     
         const currentFilm = populaires.filter(data => data.id ==idFilm) 
         const infos = currentFilm[0]
-        const baseUrl = 'https://image.tmdb.org/t/p/original'
+        const baseUrl = 'https://image.tmdb.org/t/p/w780'
         const imagePath = `${infos && infos.poster_path}`
         const imgUrl = `${baseUrl}/${imagePath}`
         
         
     
      return (
-        <div>
+        <div className='film_container'>
             <Header />
             <Banner />
-            <img  src={imgUrl} alt={infos && infos.title}/>
-            <h1>{infos && infos.title}</h1>
-            <h2> Résumé : <br/>{infos && infos.overview}</h2>
-            <h2>{infos && infos.vote_average}/10 sur {infos && infos.vote_count} votants </h2>
-            <h2>Date de sortie : {infos && infos.release_date}</h2>
+            <img className='img_film'  src={imgUrl} alt={infos && infos.title}/>
+            <h1 className='title_film'>{infos && infos.title}</h1>
+            <h2 className='resume_film'> Résumé : <br/>{infos && infos.overview}</h2>
+            
+            <div className='infos_fim'>
+              <h2 className='note_film'>{infos && infos.vote_average}/10 sur {infos && infos.vote_count} votants </h2>
+              <h2 className='date_film'>Date de sortie : {infos && infos.release_date}</h2>
+            </div>
             <Footer />
         </div>
     );

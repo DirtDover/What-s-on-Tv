@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link} from 'react-router-dom';
-import '../styles/cardActeur.css'
+import '../styles/card.css'
 
 
 const CardActeur = ({id, title, name, cover}) => {
