@@ -7,6 +7,7 @@ import Contact from './pages/contact/contact';
 import Erreur from './pages/erreur/erreur';
 import Film from './pages/film/film';
 import Acteur from './pages/acteurs/acteur'
+import CategoriesId from './pages/catégoriesId/categoriesId';
 
 
 
@@ -16,6 +17,7 @@ const Router = () => {
             <Routes>
                <Route path='/' element={<Home />}></Route> 
                <Route path='/categories' element={<Categories />}></Route>
+               <Route path='/categories/:id' element={<CategoriesId />}></Route>
                <Route path='/apropos' element={<Apropos />}></Route>
                <Route path='/contact' element={<Contact />}></Route>
                <Route path='*' element={<Erreur />}></Route>

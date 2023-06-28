@@ -1,0 +1,15 @@
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: black;
+    max-width: 1440px;
+    max-height: 1024px;
+    margin: auto;
+}
+.cat_container{
+    width: 100%;
+    height: 100%;
+}
+.filmCat_container{
+    width: 95%;
+    height: 80%;
+}
