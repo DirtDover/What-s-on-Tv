@@ -20,7 +20,6 @@ const auth = {
  const Film = () => {
     
     const [populaires, setPopulaires] = useState([]);
-    const [top, setTop] = useState([])
     const idFilm = useParams().id;
     
     const getFilm = async () => {
