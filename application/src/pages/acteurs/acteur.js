@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import Footer from '../../components/Footer';
 import { useParams} from 'react-router-dom';
-import Card from '../../components/Card';
+import CardInfos from '../../components/CardInfos';
 
 const auth = {
     method: 'GET',
@@ -25,7 +25,7 @@ const auth = {
     
     const getActeur = async () => {
       
-      const reponse = await fetch('https://api.themoviedb.org/3/trending/person/day?language=en-US', auth)
+      const reponse = await fetch('https://api.themoviedb.org/3/trending/person/day?language=fr-fr', auth)
       .then(response => response.json())
       .then(data => setPopulaires(data.results))
       .then(console.log(populaires))
@@ -48,13 +48,17 @@ const auth = {
         
     
      return (
-        <div>
+        <div className='acteur_page_container'>
             <Header />
             <Banner />
-            <img  src={imgUrl} alt={infos[0] && infos[0].name}/>
-            <h1>{infos[0] && infos[0].name}</h1>
-            <h2>{infos[0] && infos[0].known_for_department}</h2>
-            <h2>Connu pour : </h2>
+            <img className='acteur_img'  src={imgUrl} alt={infos[0] && infos[0].name}/>
+            <h1 className='acteur_infos'>{infos[0] && infos[0].name}</h1>
+            <h2 className='metier'>{infos[0] && infos[0].known_for_department}</h2>
+            <h1 className="title_film_acteur">Connu pour :</h1>
+            <div className='film_acteur'>
+              {infos[0] && infos[0].known_for.map((data) => {
+              return <CardInfos key={data.id} title={data.title} cover={data.poster_path} overview={data.overview}  />
+            })}  </div>
             <Footer />
         </div>
     );

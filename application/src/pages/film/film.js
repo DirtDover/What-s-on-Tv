@@ -20,11 +20,12 @@ const auth = {
  const Film = () => {
     
     const [populaires, setPopulaires] = useState([]);
+    const [top, setTop] = useState([])
     const idFilm = useParams().id;
     
     const getFilm = async () => {
       
-      const reponse = await fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', auth)
+      const reponse = await fetch('https://api.themoviedb.org/3/movie/popular?language=fr-fr', auth)
       .then(response => response.json())
       .then(data => setPopulaires(data.results))
       .then(console.log(populaires))
@@ -35,7 +36,7 @@ const auth = {
     useEffect(()=>{
      getFilm();
         },[])
-    
+        
         const currentFilm = populaires.filter(data => data.id ==idFilm) 
         const infos = currentFilm[0]
         const baseUrl = 'https://image.tmdb.org/t/p/w780'

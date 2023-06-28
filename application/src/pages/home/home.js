@@ -28,25 +28,25 @@ const auth = {
         const [toprated, setToprated] = useState([]);
         
           useEffect(()=>{
-            fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', auth)
+            fetch('https://api.themoviedb.org/3/movie/popular?language=fr-fr&page=1', auth)
             .then(response => response.json())
             .then(data => setPopulaire(data.results))
             .then(console.log(populaire))
             .catch(err => console.error(err));
 
-            fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', auth)
+            fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-fr&page=1', auth)
             .then(response => response.json())
             .then(data => setRecent(data.results))
             .then(console.log(recent))
             .catch(err => console.error(err));
 
-            fetch('https://api.themoviedb.org/3/trending/person/day?language=en-US', auth)
+            fetch('https://api.themoviedb.org/3/trending/person/day?language=fr-fr&page=1', auth)
             .then(response => response.json())
             .then(data => setPeople(data.results))
             .then(console.log(people))
             .catch(err => console.error(err));
 
-            fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', auth)
+            fetch('https://api.themoviedb.org/3/movie/top_rated?language=fr-fr&page=1', auth)
             .then(response => response.json())
             .then(data => setToprated(data.results))
             .then(console.log(toprated))
