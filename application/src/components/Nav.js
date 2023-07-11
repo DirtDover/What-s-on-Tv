@@ -18,6 +18,12 @@ const Nav = () => {
                     <NavLink to ="/contact" className={(nav) =>(nav.isActive ? "nav-active" : "nav_menu_item")}>
                         <li className='nav_menu_item'>Contact</li>
                     </NavLink>
+                    <NavLink to ="/login" className={(nav) =>(nav.isActive ? "nav-active" : "nav_menu_item")}>
+                        <li className='nav_menu_item'>Se conecter</li>
+                    </NavLink>
+                    <NavLink to ="/login" className={(nav) =>(nav.isActive ? "nav-active" : "nav_menu_item")}>
+                        <li className='nav_menu_item'>S'inscrire</li>
+                    </NavLink>
                 </ul>
             </nav>
     );

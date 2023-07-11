@@ -6,7 +6,7 @@ import Footer from '../../components/Footer';
 
 const erreur = () => {
     return (
-        <div className=''>
+        <div className='erreur_container'>
             <Header />
             <Banner />       
         <div className='container-error'>

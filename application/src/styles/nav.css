@@ -1,7 +1,7 @@
 
 .nav_menu_container{
    display: flex;
-   width: 40%;
+   width: 50%;
    justify-content: center;
    align-items: center;
 }
