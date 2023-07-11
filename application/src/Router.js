@@ -8,6 +8,7 @@ import Erreur from './pages/erreur/erreur';
 import Film from './pages/film/film';
 import Acteur from './pages/acteurs/acteur'
 import CategoriesId from './pages/catégoriesId/categoriesId';
+import Login from './pages/login/login';
 
 
 
@@ -23,6 +24,7 @@ const Router = () => {
                <Route path='*' element={<Erreur />}></Route>
                <Route path='/film/:id' element={<Film />}></Route>
                <Route path='/acteur/:id' element={<Acteur />}></Route>
+               <Route path='/login' element={<Login />}></Route>
 
             </Routes>
         </BrowserRouter>

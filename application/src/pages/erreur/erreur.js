@@ -6,9 +6,14 @@ import Footer from '../../components/Footer';
 
 const erreur = () => {
     return (
-        <div className='erreur_container'>
+        <div className=''>
             <Header />
-            <Banner />
+            <Banner />       
+        <div className='container-error'>
+            <h1 className='error-404'>404</h1>
+            <h2 className='title-error'>Oups ! La page que vous demandez n'existe pas</h2>
+            <a href="/" className='lien-error'>Retourner sur la page d'acceuil</a>
+        </div>
             <Footer />
         </div>
     );
