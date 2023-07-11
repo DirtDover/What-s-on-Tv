@@ -45,8 +45,8 @@ const CategoriesId = () => {
          <Header />
          <Banner /> 
          <main className="filmCat_container">
-            {filmCat.map((films)=>{ 
-                return <Card key={films.id} title={films.title} cover={films.poster_path}/>
+            {filmCat.slice(0,8).map((films)=>{ 
+                return <Card  key={films.id} title={films.title} cover={films.poster_path}/>
         })}
         </main> 
          <Footer /> 
