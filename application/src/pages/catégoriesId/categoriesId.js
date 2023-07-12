@@ -4,7 +4,7 @@ import { useParams} from 'react-router-dom';
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import Footer from '../../components/Footer';
-import Card from '../../components/Card';
+import CardFilmCat from '../../components/CardFilmCat';
 
 
 const auth = {
@@ -28,7 +28,7 @@ const CategoriesId = () => {
 
     const getfilmCat = async () => {
       
-        const reponse = await fetch(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${idCat}}`,auth)
+        const reponse = await fetch(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=fr-FR&page=1&sort_by=popularity.desc&with_genres=${idCat}`,auth)
         .then(response => response.json())
         .then(data => setfilmCat(data.results))
         .then(console.log(filmCat))
@@ -45,8 +45,8 @@ const CategoriesId = () => {
          <Header />
          <Banner /> 
          <main className="filmCat_container">
-            {filmCat.slice(0,8).map((films)=>{ 
-                return <Card  key={films.id} title={films.title} cover={films.poster_path}/>
+            {filmCat.slice(0,10).map((films)=>{ 
+                return <CardFilmCat  key={films.id} title={films.title} cover={films.poster_path}/>
         })}
         </main> 
          <Footer /> 
