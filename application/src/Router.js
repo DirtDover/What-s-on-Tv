@@ -9,6 +9,7 @@ import Film from './pages/film/film';
 import Acteur from './pages/acteurs/acteur'
 import CategoriesId from './pages/catégoriesId/categoriesId';
 import Login from './pages/login/login';
+import TopFilm from './pages/topFilm/topFilm';
 
 
 
@@ -23,6 +24,7 @@ const Router = () => {
                <Route path='/contact' element={<Contact />}></Route>
                <Route path='*' element={<Erreur />}></Route>
                <Route path='/film/:id' element={<Film />}></Route>
+               <Route path='/TopRated/:id' element={<TopFilm />}></Route>
                <Route path='/acteur/:id' element={<Acteur />}></Route>
                <Route path='/login' element={<Login />}></Route>
 

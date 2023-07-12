@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import Card from '../../components/Card';
 import CardActeur from '../../components/CardActeur';
+import CardTopFilm from '../../components/CardTopFilm';
 
 
 const auth = {
@@ -81,7 +82,7 @@ const auth = {
                 <div className="top_container">
                   <h1 className="top_title">Films les mieux notés</h1>
                 {toprated.slice(0,7).map((toprateds)=> (
-                       <Card key={toprateds.id} id={toprateds.id} title={toprateds.title} cover={toprateds.poster_path}/>
+                       <CardTopFilm key={toprateds.id} id={toprateds.id} title={toprateds.title} cover={toprateds.poster_path}/>
                     ))}
                 </div>
             </main>
