@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/nav.css';
 import {NavLink} from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 const Nav = () => {
     return (
@@ -25,6 +26,8 @@ const Nav = () => {
                         <li className='nav_menu_item'>S'inscrire</li>
                     </NavLink>
                 </ul>
+                <SearchBar />
+                
             </nav>
     );
 };
