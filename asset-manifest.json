@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/wot/static/css/main.75094939.css",
-    "main.js": "/wot/static/js/main.ba46ac3e.js",
+    "main.js": "/wot/static/js/main.2cc48992.js",
     "static/media/Banner2.avif": "/wot/static/media/Banner2.9f2c5ac66597d18f6d0b.avif",
     "index.html": "/wot/index.html",
     "main.75094939.css.map": "/wot/static/css/main.75094939.css.map",
-    "main.ba46ac3e.js.map": "/wot/static/js/main.ba46ac3e.js.map"
+    "main.2cc48992.js.map": "/wot/static/js/main.2cc48992.js.map"
   },
   "entrypoints": [
     "static/css/main.75094939.css",
-    "static/js/main.ba46ac3e.js"
+    "static/js/main.2cc48992.js"
   ]
 }
