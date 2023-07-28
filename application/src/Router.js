@@ -17,7 +17,7 @@ const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
-               <Route path='/What-s-on-Tv/' element={<Home />}></Route>
+               <Route exact path='/What-s-on-Tv/' element={<Home />}></Route>
                <Route path='/' element={<Home />}></Route> 
                <Route path='/categories' element={<Categories />}></Route>
                <Route path='/categories/:id' element={<CategoriesId />}></Route>
