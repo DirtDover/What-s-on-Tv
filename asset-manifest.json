@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/wot/static/css/main.75094939.css",
-    "main.js": "/wot/static/js/main.2cc48992.js",
-    "static/media/Banner2.avif": "/wot/static/media/Banner2.9f2c5ac66597d18f6d0b.avif",
-    "index.html": "/wot/index.html",
-    "main.75094939.css.map": "/wot/static/css/main.75094939.css.map",
-    "main.2cc48992.js.map": "/wot/static/js/main.2cc48992.js.map"
+    "main.css": "/What-s-on-Tv/static/css/main.75094939.css",
+    "main.js": "/What-s-on-Tv/static/js/main.784edcee.js",
+    "static/media/Banner2.avif": "/What-s-on-Tv/static/media/Banner2.9f2c5ac66597d18f6d0b.avif",
+    "index.html": "/What-s-on-Tv/index.html",
+    "main.75094939.css.map": "/What-s-on-Tv/static/css/main.75094939.css.map",
+    "main.784edcee.js.map": "/What-s-on-Tv/static/js/main.784edcee.js.map"
   },
   "entrypoints": [
     "static/css/main.75094939.css",
-    "static/js/main.2cc48992.js"
+    "static/js/main.784edcee.js"
   ]
 }
