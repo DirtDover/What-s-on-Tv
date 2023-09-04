@@ -3,6 +3,9 @@
 ---
 
 Projet personnel supplémentaire pour continuer à développer mes compétences après la formation.
+Application permettant de choisir quel film regarder ce soir.
+
+Projet basé sur React avec Call Api Rest.
 
 Projet toujours en développement !
 
